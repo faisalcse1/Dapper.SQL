@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dapper.SQL
 {
-    internal interface IDbContext
+    public interface IDbContext
     {
         IEnumerable<T> Query<T>(string query, object data = null, IDbTransaction transaction = null,
             int? commandTimeOut = null, CommandType? commandType = null);
