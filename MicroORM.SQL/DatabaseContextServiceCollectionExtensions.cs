@@ -2,11 +2,11 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
 
-namespace Dapper.SQL
+namespace MicroORM.SQL
 {
-    public static class DapperContextServiceCollectionExtensions
+    public static class DatabaseContextServiceCollectionExtensions
     {
-        public static IServiceCollection AddDapperContext(this IServiceCollection services, Action<DapperContextOptions> setupOptions)
+        public static IServiceCollection AddDapperContext(this IServiceCollection services, Action<DatabaseContextOptions> setupOptions)
         {
             if (services == null)
             {
@@ -19,7 +19,7 @@ namespace Dapper.SQL
             }
             services.AddOptions();
             services.Configure(setupOptions);
-            services.TryAddScoped<DapperContext>();
+            services.TryAddSingleton<DatabaseContext>();
             return services;
         }
 

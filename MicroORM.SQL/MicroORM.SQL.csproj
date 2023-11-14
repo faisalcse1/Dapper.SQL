@@ -7,13 +7,12 @@
 		<Company>Programming Palli</Company>
 		<Copyright>2023 Programming Palli</Copyright>
 		<PackageProjectUrl>https://github.com/faisalcse1/Dapper.SQL</PackageProjectUrl>		
-		<PackageIconUrl />
 		<RepositoryUrl>https://github.com/faisalcse1/Dapper.SQL</RepositoryUrl>
-		<PackageTags>micro-orm;dapper-sql;SQL;C#;orm;dapper;dapper-extension;</PackageTags>
-		<Description>A high performance Micro-ORM supporting SQL Server. This is the extension version for easy to configure and use.</Description>
-		<FileVersion>1.0.0.1</FileVersion>
-		<AssemblyVersion>1.0.0.1</AssemblyVersion>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageTags>MicroORM;micro-orm;dapper-sql;SQL;C#;orm;dapper;dapper-extension;</PackageTags>
+		<Title>Micro ORM SQL</Title>
+		<PackageId>MicroORM.SQL</PackageId>
+		
+		
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Dapper;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Dapper.SQL
+namespace MicroORM.SQL
 {
     public interface IDbContext
     {

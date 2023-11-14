@@ -1,37 +1,36 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Dapper;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Dapper.SQL
+namespace MicroORM.SQL
 {
-    public class DapperContext
+    public class DatabaseContext
     {
         private IDbContext _context;
-        public DapperContext(IDbContext context)
+        public DatabaseContext(IDbContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
         /// <summary>
         /// SQL Database server configuration using connectionstring.
         /// </summary>
         /// <param name="connectionString"></param>        
-        public DapperContext(string connectionString)
+        public DatabaseContext(string connectionString)
         {
-            this._context = new SqlContext(connectionString);
+            _context = new SqlContext(connectionString);
         }
 
         /// <summary>
         /// SQL Database Configuration
         /// </summary>
         /// <param name="sqlContext"></param>
-        public DapperContext(SqlContext sqlContext)
+        public DatabaseContext(SqlContext sqlContext)
         {
-            this._context = sqlContext;
+            _context = sqlContext;
         }
 
         /// <summary>
@@ -39,10 +38,10 @@ namespace Dapper.SQL
         /// </summary>
         /// <param name="options"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public DapperContext(IOptions<DapperContextOptions> options)
+        public DatabaseContext(IOptions<DatabaseContextOptions> options)
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
-            this._context = new SqlContext(options.Value.ConnectionString);
+            _context = new SqlContext(options.Value.ConnectionString);
         }
 
 

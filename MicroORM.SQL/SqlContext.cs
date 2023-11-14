@@ -1,18 +1,16 @@
-﻿using System;
+﻿using Dapper;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace Dapper.SQL
+namespace MicroORM.SQL
 {
     public class SqlContext : IDbContext
     {
         private string connectionString;
         /// <summary>
-        /// SET SQL Database connectionstring
+        /// SET SQL Database connection string
         /// </summary>
         /// <param name="connectionString"></param>
         public SqlContext(string connectionString)
