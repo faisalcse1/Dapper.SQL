@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -33,7 +34,16 @@ namespace Dapper.SQL
             this._context = sqlContext;
         }
 
-       
+        /// <summary>
+        /// Configure SQL Database with connection string.
+        /// </summary>
+        /// <param name="options"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public DapperContext(IOptions<DapperContextOptions> options)
+        {
+            if (options == null) throw new ArgumentNullException(nameof(options));
+            this._context = new SqlContext(options.Value.ConnectionString);
+        }
 
 
         /// <summary>
