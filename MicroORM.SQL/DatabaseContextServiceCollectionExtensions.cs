@@ -6,7 +6,7 @@ namespace MicroORM.SQL
 {
     public static class DatabaseContextServiceCollectionExtensions
     {
-        public static IServiceCollection AddDapperContext(this IServiceCollection services, Action<DatabaseContextOptions> setupOptions)
+        public static IServiceCollection AddDatabaseContext(this IServiceCollection services, Action<DatabaseContextOptions> setupOptions)
         {
             if (services == null)
             {
